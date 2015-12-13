@@ -10,9 +10,9 @@
 	{
 		foreach ($screens as $s)
 		{
-			if ($s == $_POST['screen'] && $s == $_POST['pin'])
+			if ($s['id'] == $_POST['screen'] && $s['pin'] == $_POST['pin'])
 			{
-				$_SESSION['screen'] = $s['screen'];
+				$_SESSION['screen'] = $s['id'];
 				$_SESSION['pin'] = $s['pin'];
 				$_SESSION['screen_name'] = $s['name'];
 				$_SESSION['screen_location'] = $s['location'];
