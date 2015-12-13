@@ -14,13 +14,13 @@
 			if (isset($_POST['track']))
 			{
 				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
-				. $_SESSION['screen'] . "&pin=" & $_SESSION['pin'] . "&artist=" . urlencode($_POST['artist']);
+				. $_SESSION['screen'] . "&pin=" & $_SESSION['pin'] . "&artist=" . urlencode($_POST['artist']));
 			}
 			else
 			{
 				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
 				. $_SESSION['screen'] . "&pin=" & $_SESSION['pin'] . "&artist=". urlencode($_POST['artist'])
-				. "&track=" . urlencode($_POST['track']);
+				. "&track=" . urlencode($_POST['track']));
 			}
 			 
 		}
