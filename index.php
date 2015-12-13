@@ -1,9 +1,9 @@
 <?php
 	session_start();
-	if ($_SESSION['screen'])
+	if (isset($_SESSION['screen']))
 		header("Location: dashboard.php");
 	
-	$screens_json = file_get_contents("/Server/getscreens.php?showpin=1");
+	$screens_json = file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/getscreens.php?showpin=1");
 	$screens = json_decode($screens_json, true);
 	
 	if (isset($_POST['screen']) && isset($_POST['pin']))

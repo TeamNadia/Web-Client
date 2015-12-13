@@ -6,7 +6,7 @@
 		die();
 	}
 	
-	$tracks_json = file_get_contents("/Server/getsongs.php?screen=" . $_SESSION['screen']);
+	$tracks_json = file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/getsongs.php?screen=" . $_SESSION['screen']);
 	$tracks = json_decode($tracks_json, true);
 ?>
 <!DOCTYPE html>
