@@ -100,8 +100,8 @@
 								. $track['votes'] . '</td><td><form action="dashboard.php" method="POST">
 								<input type="hidden" name="action" value="upvote"><input type="hidden" name="trackid" value="' . $track['id']
 								. '"><button type="submit" class="btn btn-default">
-								<span class="glyphicon glyphicon-thumbs-up"></button></form>
-								</span></td><td><form action="dashboard.php" method="POST">
+								<span class="glyphicon glyphicon-thumbs-up"></span></button></form>
+								</td><td><form action="dashboard.php" method="POST">
 								<input type="hidden" name="action" value="downvote"><input type="hidden" name="trackid" value="' . $track['id']
 								. '"><button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-thumbs-down"></span></button>
 								</form></td></tr>';
