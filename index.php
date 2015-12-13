@@ -43,7 +43,7 @@
 				<div class="container">
 					<form class="form-horizontal" action="index.php" method="POST">
 						<div class="form-group">
-							<label class="col-sm-1 control-label">Artist:</label>
+							<label class="col-sm-1 control-label">Screen:</label>
 							<div class="col-sm-5">
 								<select class="form-control" name="screen">
 									<?php
