@@ -6,6 +6,26 @@
 		die();
 	}
 	
+	if (isset($_POST['action']))
+	{
+		
+		if ($_POST['action'] == "addnew")
+		{
+			if (isset($_POST['track']))
+			{
+				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
+				. $_SESSION['screen'] . "&pin=" & $_SESSION['pin'] . "&artist=" . urlencode($_POST['artist']);
+			}
+			else
+			{
+				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
+				. $_SESSION['screen'] . "&pin=" & $_SESSION['pin'] . "&artist=". urlencode($_POST['artist'])
+				. "&track=" . urlencode($_POST['track']);
+			}
+			 
+		}
+	}
+	
 	$tracks_json = file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/getsongs.php?screen=" . $_SESSION['screen']);
 	$tracks = json_decode($tracks_json, true);
 ?>
@@ -24,11 +44,12 @@
 	<body>
 		<div class="container">
 			<div class="jumbotron">
-				<h1>Music Chooser - <?php echo $_SESSION['screen_name']; ?><</h1>
+				<h1>Music Chooser - <?php echo $_SESSION['screen_name']; ?></h1>
 				<h4><em>Welcome to <?php echo $_SESSION['screen_location']; ?></em></h4><hr>
 				<h5>Add New Song</h5>
 				<div class="container">
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="dashboard.php" method="POST">
+						<input type="hidden" name="action" value="addnew">
 						<div class="form-group">
 							<label class="col-sm-1 control-label">Artist:</label>
 							<div class="col-sm-5">
@@ -54,7 +75,7 @@
 						<tr>
 							<th>Artist</th>
 							<th>Track</th>
-							<th>Votes</th>
+							<th><span class="glyphicon glyphicon-thumbs-up"><span class="glyphicon glyphicon-thumbs-down"></th>
 							<th><span class="glyphicon glyphicon-thumbs-up"></span></th>
 							<th><span class="glyphicon glyphicon-thumbs-down"></span></th>
 						</tr>
