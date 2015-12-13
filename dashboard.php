@@ -109,7 +109,10 @@
 						?>
 					</tbody>
 				</table>
-				<br><button type="button" type="button" style="btn btn-default" onclick="window.location='logout.php';">Log Out</button>
+				<br>
+				<div class="container">
+					<button type="button" style="btn btn-default" onclick="window.location='logout.php';">Log Out</button>
+				</div>
 			</div>
 		</div>
 	</body>
