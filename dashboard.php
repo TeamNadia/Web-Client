@@ -14,15 +14,26 @@
 			if (isset($_POST['track']))
 			{
 				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
-				. $_SESSION['screen'] . "&pin=" . $_SESSION['pin'] . "&artist=" . $_POST['artist']);
+				. $_SESSION['screen'] . "&pin=" . $_SESSION['pin'] . "&artist=" . urlencode($_POST['artist']));
 			}
 			else
 			{
 				file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/submitsong.php?screen="
-				. $_SESSION['screen'] . "&pin=" . $_SESSION['pin'] . "&artist=". $_POST['artist']
-				. "&track=" . $_POST['track']);
+				. $_SESSION['screen'] . "&pin=" . $_SESSION['pin'] . "&artist=". urlencode($_POST['artist'])
+				. "&track=" . urlencode($_POST['track']));
 			}
 			 
+		}
+		
+		elseif ($_POST['action'] == "upvote")
+		{
+			file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/vote.php?screen=" . $_SESSION['screen']
+			. "&pin=" . $_SESSION['pin'] . "&id=" . urlencode($_POST['trackid']) . "&vote=1");
+		}
+		elseif ($_POST['action'] == "downvote")
+		{
+			file_get_contents("http://projectnadia.windowshelpdesk.co.uk/Server/vote.php?screen=" . $_SESSION['screen']
+			. "&pin=" . $_SESSION['pin'] . "&id=" . urlencode($_POST['trackid']) . "&vote=-1");
 		}
 	}
 	
@@ -86,8 +97,14 @@
 							{
 								echo '<tr><td>' . $track['artist']
 								. '</td><td>' . $track['track'] . '</td><td>'
-								. $track['votes'] . '</td><td><span class="glyphicon glyphicon-thumbs-up">
-								</span></td><td><span class="glyphicon glyphicon-thumbs-down"></span></td></tr>';
+								. $track['votes'] . '</td><td><form action="dashboard.php" method="POST">
+								<input type="hidden" name="action" value="upvote"><input type="hidden" name="trackid" value="' . $track['id']
+								. '"><button type="submit" class="btn">
+								<span class="glyphicon glyphicon-thumbs-up"></button></form>
+								</span></td><td><form action="dashboard.php" method="POST">
+								<input type="hidden" name="action" value="downvote"><input type="hidden" name="trackid" value="' . $track['id']
+								. '"><button type="submit" class="btn"><span class="glyphicon glyphicon-thumbs-down"></span></button>
+								</form></td></tr>';
 							}
 						?>
 					</tbody>
