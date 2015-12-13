@@ -86,7 +86,7 @@
 						<tr>
 							<th>Artist</th>
 							<th>Track</th>
-							<th><span class="glyphicon glyphicon-thumbs-up"><span class="glyphicon glyphicon-thumbs-down"></th>
+							<th><span class="glyphicon glyphicon-thumbs-up"></span><span class="glyphicon glyphicon-thumbs-down"></span></th>
 							<th><span class="glyphicon glyphicon-thumbs-up"></span></th>
 							<th><span class="glyphicon glyphicon-thumbs-down"></span></th>
 						</tr>
