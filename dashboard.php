@@ -110,7 +110,7 @@
 					</tbody>
 				</table>
 			</div>
-			<br><button href="logout.php" type="button" style="btn btn-default">Log Out</button>
+			<br><a href="logout.php"><button type="button" style="btn btn-default">Log Out</button></a>
 		</div>
 		
 		<!-- Loading the JS at the bottom for faster page loading -->
