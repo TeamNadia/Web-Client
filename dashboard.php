@@ -109,12 +109,8 @@
 						?>
 					</tbody>
 				</table>
-				<br><a href="logout.php"><button type="button" style="btn btn-default">Log Out</button></a>
+				<br><button href="logout.php" type="button" style="btn btn-default">Log Out</button>
 			</div>
 		</div>
-		
-		<!-- Loading the JS at the bottom for faster page loading -->
-		<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	</body>
 </html>
