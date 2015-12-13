@@ -49,7 +49,7 @@
 									<?php
 										foreach ($screens as $screen)
 										{
-											echo '<option value="' . $screen['id'] . '>' . $screen['location'] . " - " . $screen['name'] . '</option>';
+											echo '<option value="' . $screen['id'] . '">' . $screen['location'] . " - " . $screen['name'] . '</option>';
 										}
 									?>
 								</select>
